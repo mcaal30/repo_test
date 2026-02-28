@@ -15,3 +15,6 @@ class UsuarioService:
 
     def obtener_usuarios(self):
         return self.repo.listar()
+    
+    def eliminar_usuario(self, nombre):
+        self.repo.eliminar(nombre)

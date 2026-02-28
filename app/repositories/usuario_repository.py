@@ -7,3 +7,9 @@ class UsuarioRepository:
 
     def listar(self):
         return self.usuarios
+
+    def eliminar(self, nombre):
+        self.usuarios = [
+            usuario for usuario in self.usuarios
+            if usuario.nombre != nombre
+        ]

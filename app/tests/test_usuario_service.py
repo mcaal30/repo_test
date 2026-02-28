@@ -16,3 +16,11 @@ def test_crear_usuario_invalido():
 
     with pytest.raises(ValueError):
         service.crear_usuario("")
+
+def test_eliminar_usuario():
+    service = UsuarioService()
+    service.crear_usuario("Max")
+    service.eliminar_usuario("Max")
+
+    usuarios = service.obtener_usuarios()
+    assert len(usuarios) == 0
